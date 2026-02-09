@@ -1,0 +1,174 @@
+@font-face {
+  font-family: neu;
+  src: url(./assets/NeueHaasDisplayMediu.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: neu;
+}
+.main {
+  background: #efeae3;
+}
+
+/* -----------------section -------------------- */
+section {
+  padding-bottom: 64px;
+  margin-top: 64px;
+  max-width: 1440px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* -------------------nav-----------------------  */
+.nav {
+  width: 100%;
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+  gap: 16px;
+}
+/*--------------------------------- button ---------------------------------  */
+button {
+  position: relative;
+  padding: 12px 24px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 32px;
+  background: transparent;
+  font-weight: 600;
+  color: black;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 0;
+  font-size: 16px;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background: black;
+  transition: 0.5s ease;
+  z-index: -1;
+}
+
+button:hover::before {
+  bottom: 0;
+}
+
+button:hover {
+  color: white;
+}
+
+/*----------------------- hero ------------------------- */
+.hero {
+  height: 70vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.hero .left {
+  width: 40%;
+  max-width: 400px;
+}
+.hero .left p {
+  font-size: 28px;
+}
+
+.hero .right {
+  width: 60vw;
+
+  text-align: right;
+}
+.hero .right h1 {
+  font-size: 108px;
+  line-height: 98px;
+}
+
+video {
+  max-width: 100%;
+  border-radius: 24px;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #efeae3;
+  /* padding: 80px 0; */
+}
+
+/* moving track */
+.marquee-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll-left 20s linear infinite;
+}
+
+/* text group */
+.sec-2 {
+  display: flex;
+  align-items: center;
+  gap: 98px;
+  padding-right: 98px;
+}
+
+/* text style */
+.sec-2 h2 {
+  font-size: 108px;
+  font-weight: 600;
+  white-space: nowrap;
+  position: relative;
+}
+.sec-2 img{
+    height: 84px;
+}
+
+/* infinite animation */
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+/*--------------------- about -------------------- */
+.about{
+   width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about .left{
+  width: 100%; 
+  max-width: 800px;
+}
+
+.about .left p{
+  font-size: 60px;
+}

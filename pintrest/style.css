@@ -34,12 +34,11 @@ body {
   top: 0;
 }
 
-nav ul {
+.nav ul {
   list-style: none;
 }
 
-nav ul li {
-  /* background: red; */
+.nav ul li {
   margin-top: 24px;
   padding: 8px;
   border-radius: 12px;
@@ -47,16 +46,20 @@ nav ul li {
   align-items: center;
   justify-content: center;
 }
-nav ul li:hover {
+.nav ul li:hover,
+.active {
   background-color: #e5e5e0;
   cursor: pointer;
 }
-nav .logo {
+.nav .logo {
   backdrop-filter: red;
 }
 
 nav ul li:first-child {
   margin-top: 0;
+}
+.active {
+  color: #000000;
 }
 
 /* header */
@@ -84,12 +87,10 @@ nav ul li:first-child {
   border-radius: 12px;
   padding-left: 12px;
   padding-right: 12px;
-  
 }
 .header .search:hover {
   cursor: text;
 }
-
 
 .header .searchInput {
   width: 100%;
@@ -99,4 +100,133 @@ nav ul li:first-child {
   outline: none;
   background: transparent;
   font-size: 20px;
+}
+
+.header .profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  background: #000;
+  border-radius: 50%;
+  color: #ffffff;
+}
+.main {
+  margin-top: 80px; /* header */
+  margin-left: 72px; /* sidebar */
+  padding: 16px;
+}
+
+/* Masonry grid */
+.masonry {
+  column-count: 5;
+  column-gap: 16px;
+}
+
+.px-4 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/* Card */
+.card {
+  position: relative;
+  break-inside: avoid;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.save-btn,
+.share-btn,
+.overlay-text {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.card:hover .save-btn,
+.card:hover .share-btn,
+.card:hover .overlay-text {
+  opacity: 1;
+}
+
+.save-btn {
+  top: 14px;
+  right: 14px;
+  background: #e60023;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.share-btn {
+  bottom: 14px;
+  right: 14px;
+  background: white;
+  color: black;
+  padding: 10px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.overlay-text {
+  bottom: 20px;
+  left: 14px;
+  right: 70px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .masonry {
+    column-count: 4;
+  }
+}
+@media (max-width: 900px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+@media (max-width: 600px) {
+  .masonry {
+    column-count: 2;
+  }
 }

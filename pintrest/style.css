@@ -7,7 +7,7 @@
 html,
 body {
   height: 100%;
-  background-color: white;
+  background-color: #f1f1f1;
 }
 
 .layout {
@@ -15,7 +15,18 @@ body {
   height: 100%;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
+  /* position: relative; */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  display: none;
 }
 
 .nav {
@@ -69,19 +80,20 @@ nav ul li:first-child {
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  background: slateblue;
+  background: #f9f6f6;
   top: 0;
   left: 72px;
   width: calc(100% - 72px);
   margin-right: 32px;
   padding: 16px;
+
+  z-index: 10;
 }
 
 .header .search {
   width: 100%;
   max-width: 80%;
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   background-color: #e5e5e0;
   border-radius: 12px;
@@ -151,22 +163,21 @@ nav ul li:first-child {
   transform: scale(1.05);
 }
 
-.overlay {
+.cardOverlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: 0.3s ease;
   z-index: 1;
 }
 
-.card:hover .overlay {
+.card:hover .cardOverlay {
   opacity: 1;
 }
 
 .save-btn,
-.share-btn,
-.overlay-text {
+.cardBottom {
   position: absolute;
   opacity: 0;
   transition: all 0.3s ease;
@@ -174,9 +185,9 @@ nav ul li:first-child {
 }
 
 .card:hover .save-btn,
-.card:hover .share-btn,
-.card:hover .overlay-text {
+.card:hover .cardBottom {
   opacity: 1;
+  cursor: pointer;
 }
 
 .save-btn {
@@ -192,8 +203,6 @@ nav ul li:first-child {
 }
 
 .share-btn {
-  bottom: 14px;
-  right: 14px;
   background: white;
   color: black;
   padding: 10px 16px;
@@ -202,16 +211,23 @@ nav ul li:first-child {
   font-size: 14px;
 }
 
-.overlay-text {
-  bottom: 20px;
-  left: 14px;
-  right: 70px;
+.cardOverlay-text {
   color: white;
   font-size: 18px;
   font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.cardBottom {
+  position: absolute;
+  bottom: 0;          
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;  
 }
 
 /* Responsive */

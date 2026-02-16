@@ -134,25 +134,69 @@ const animeCharacters = [
 ];
 
 const masonry = document.getElementById("masonry");
+const searchInput = document.querySelector(".searchInput");
+const overlay = document.querySelector(".overlay");
 
-masonry.innerHTML = animeCharacters
-  .map(
-    (item) => `
-    <div class="card">
+function renderCards(animeCharacters) {
+  if (animeCharacters.length === 0) {
+    masonry.innerHTML = "<h2 style='text-align:center;'>No results found</h2>";
+    return;
+  }
 
-      <img src="${item.image}" alt="${item.description}">
+  masonry.innerHTML = animeCharacters
+    .map(
+      (item) => `
+      <div class="card">
+        <img src="${item.image}" alt="${item.description}">
+        <div class="cardOverlay"></div>
+        <button class="save-btn">Save</button>
 
-      <div class="overlay"></div>
-
-      <button class="save-btn">Save</button>
-      
-      <button class="share-btn">share</button>
-
-      <div class="overlay-text">
+        <div class="cardBottom">
+        <div class="cardOverlay-text">
         ${item.description}
+        </div>
+        <button class="share-btn">share</button>
+        </div>
       </div>
+      `,
+    )
+    .join("");
+}
 
-    </div>
-  `,
-  )
-  .join("");
+/* -------------------- Search Function--------------------------*/
+function search() {
+  let searchValue = searchInput.value.toLowerCase().trim();
+
+  // filter the search
+  let filteredData = animeCharacters.filter( (item) =>
+      item.anime.toLowerCase().includes(searchValue) ||
+      item.description.toLowerCase().includes(searchValue),
+  );
+
+  renderCards(filteredData);
+}
+
+
+/* ------------------ Overlay  ----------------------*/
+searchInput.addEventListener("focus", () => {
+  overlay.style.display = "block";
+});
+
+overlay.addEventListener("click", () => {
+  overlay.style.display = "none";
+  searchInput.blur();
+});
+
+/* ---------------Search to Input ---------------------*/
+searchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    search();
+     overlay.style.display = "none";
+    searchInput.blur();
+  }
+});
+
+
+
+/* ------------------- first time card load -----------------------*/
+renderCards(animeCharacters);

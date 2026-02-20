@@ -1,0 +1,78 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000000;
+  color: #fff;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.hero,
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  padding: 4rem;
+  background: #605f5f;
+}
+
+.heading {
+  font-size: 8vw;
+  line-height: 1.1;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* horizontal scroll */
+#horizontal-scroll {
+  padding: 160px 0;
+}
+
+.horizontal-scroll-wrapper {
+  overflow: hidden;
+  height: 55vh;
+}
+
+.horizontal {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-left: 45vw;
+}
+
+.horizontal > div {
+  padding: 0 4vw;
+}
+
+.horizontal .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 28vw;
+  padding: 50px 40px;
+  border: 2px solid #fff;
+  color: aqua;
+}
+
+.card h2 {
+  font-size: 3vw;
+  font-weight: 300;
+}
+
+.card .count {
+  color: aqua;
+  font-size: 7vw;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.horizontal > div:last-child {
+  padding: 0 6vw 0 4vw;
+}

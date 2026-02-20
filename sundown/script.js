@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
   gsap.registerPlugin(ScrollTrigger);
 
   const lenis = new Lenis({
-    lerp: 0.08,
+    lerp: 0.06,
     smoothWheel: true,
   });
 

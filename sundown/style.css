@@ -2,6 +2,13 @@
   font-family: neu;
   src: url(./assets/NeueHaasDisplayMediu.ttf);
 }
+
+@font-face {
+  font-family: neu;
+  font-weight: 200;
+  src: url(./assets//NeueHaasDisplayRoman.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +23,7 @@ body {
 }
 .main {
   background: #efeae3;
+  /* overflow-x: none; */
 }
 
 /* -----------------section -------------------- */
@@ -84,7 +92,7 @@ button:hover {
 
 /*----------------------- hero ------------------------- */
 .hero {
-  height: 70vh;
+  min-height: 70vh;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -143,8 +151,8 @@ video {
   white-space: nowrap;
   position: relative;
 }
-.sec-2 img{
-    height: 84px;
+.sec-2 img {
+  height: 84px;
 }
 
 /* infinite animation */
@@ -157,18 +165,123 @@ video {
   }
 }
 /*--------------------- about -------------------- */
-.about{
-   width: 90%;
+.about {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.about .left{
-  width: 100%; 
-  max-width: 800px;
+.about .left {
+  width: 60%;
+  max-width: 830px;
 }
 
-.about .left p{
+.about .left p {
   font-size: 60px;
+}
+
+.about .right {
+  /* background-color: #ffae3c; */
+  width: 30%;
+  max-width: 290px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px;
+  gap: 32px;
+}
+.about .right img,
+.about .right {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.about .right p {
+  font-weight: 200;
+  font-size: 15px;
+}
+/* -----------------services -------------------- */
+
+.services {
+  padding-bottom: 64px;
+  margin-top: 64px;
+}
+.services-card {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #38383864;
+}
+
+.services-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: orange;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.25s ease;
+  z-index: 0;
+}
+
+.services-card:hover::before {
+  transform: scaleY(1);
+}
+
+.services-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.services-card h3 {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.services-inner figure {
+  height: 450px;
+  aspect-ratio: 7 / 8;
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  display: none;
+}
+
+.services-inner figure img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.services-card:hover .services-inner figure {
+  display: block;
+}
+
+/* horizontal scroll  */
+
+
+
+
+/* footer  */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+  background-color: #ffffff;
+
+  background-image: radial-gradient(
+    ellipse 90% 120%  at 100% 10%,
+    #ffffff 30%,
+    #f97316 50%,
+    #dc7f22c0 90%
+
+  );
 }

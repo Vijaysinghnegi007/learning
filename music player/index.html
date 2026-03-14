@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Song List</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <main class="main">
+      <section class="main-wrapper">
+        <!-- LEFT SIDE -->
+        <div class="left"></div>
+
+        <!-- RIGHT SIDE -->
+        <div class="right">
+          <h3>All Songs</h3>
+
+          <div class="all-songs">
+            <!-- SONG CARD -->
+            <div class="song-card">
+              <div class="card-section">
+                <img
+                  src="https://cdn.pixabay.com/photo/2023/09/27/18/54/song-8280051_1280.jpg"
+                  alt="song"
+                />
+                <h2>Pehla Bhi Main</h2>
+              </div>
+
+              <p class="duration">3:45</p>
+            </div>
+
+            <!-- SONG CARD -->
+            <div class="song-card">
+              <div class="card-section">
+                <img
+                  src="https://cdn.pixabay.com/photo/2023/09/27/18/54/song-8280051_1280.jpg"
+                  alt="song"
+                />
+                <h2>Arjan Vailly</h2>
+              </div>
+
+              <p class="duration">4:10</p>
+            </div>
+
+            <!-- SONG CARD -->
+            <div class="song-card">
+              <div class="card-section">
+                <img
+                  src="https://cdn.pixabay.com/photo/2023/09/27/18/54/song-8280051_1280.jpg"
+                  alt="song"
+                />
+                <h2>Satranga</h2>
+              </div>
+
+              <p class="duration">3:20</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="player">
+        <!-- back  -->
+        <button class="previous">
+          <i class="fa-solid fa-backward-step"></i>
+        </button>
+
+        <!-- play pause  -->
+
+        <button class="play">
+          <i class="fa-solid fa-play play-icon" ></i>
+          <!-- <i class="fa-solid fa-pause"></i> -->
+        </button>
+
+        <!-- next  -->
+        <button class="next">
+          <i class="fa-solid fa-forward-step"></i>
+        </button>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+
+</html>

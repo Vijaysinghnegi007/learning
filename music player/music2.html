@@ -1,0 +1,284 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-purple-700 via-purple-600 to-indigo-700 min-h-screen text-white"
+  >
+    <div class="flex flex-col lg:flex-row min-h-screen">
+      <div
+        class="w-full lg:w-64 bg-white/10 backdrop-blur-xl p-6 flex flex-col justify-between"
+      >
+        <div>
+          <div class="flex items-center space-x-2 text-2xl font-semibold mb-8">
+            <i class="fab fa-apple"></i> <span>Music</span>
+          </div>
+          <div class="bg-white/10 rounded-lg px-3 py-2 flex items-center mb-6">
+            <i class="fas fa-search text-sm mr-2"></i>
+            <input
+              class="bg-transparent outline-none text-sm w-full"
+              placeholder="Search..."
+            />
+          </div>
+          <p class="text-xs opacity-60 mb-3">Menu: 5</p>
+          <div class="space-y-4 text-sm">
+            <div class="flex items-center space-x-3 opacity-90">
+              <i class="fas fa-home"></i> <span>Home</span>
+            </div>
+            <div class="flex items-center space-x-3 opacity-60">
+              <i class="fas fa-compass"></i> <span>Discover</span>
+            </div>
+            <div class="flex items-center space-x-3 opacity-60">
+              <i class="fas fa-th-large"></i> <span>Browse</span>
+            </div>
+            <div class="flex items-center justify-between opacity-60">
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-podcast"></i> <span>Podcasts</span>
+              </div>
+              <span class="bg-red-500 text-xs px-2 rounded-full">new</span>
+            </div>
+            <div class="flex items-center space-x-3 opacity-60">
+              <i class="fas fa-broadcast-tower"></i> <span>Radio</span>
+            </div>
+          </div>
+          <p class="text-xs opacity-60 mt-8 mb-3">Library: 3</p>
+          <div class="space-y-4 text-sm">
+            <div class="flex items-center space-x-3 opacity-60">
+              <i class="fas fa-compact-disc"></i> <span>Albums</span>
+            </div>
+            <div class="flex items-center space-x-3 opacity-60">
+              <i class="fas fa-music"></i> <span>Song</span>
+            </div>
+            <div class="flex items-center space-x-3 opacity-60">
+              <i class="fas fa-user"></i> <span>Artists</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center space-x-3 mt-10">
+          <img
+            src="https://placehold.co/40x40"
+            alt="profile avatar portrait photo of a young man with casual clothing smiling"
+            class="rounded-full"
+          />
+          <div>
+            <p class="text-sm">Vitaliy Dorozhko</p>
+            <p class="text-xs opacity-60">Premium member</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex-1 p-6 lg:p-10">
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <p class="text-sm opacity-70">What's hot</p>
+            <h1 class="text-3xl font-semibold">Trending</h1>
+          </div>
+        </div>
+        <div
+          class="bg-white/10 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between mb-8 backdrop-blur-xl"
+        >
+          <div>
+            <p class="text-sm opacity-70">Artist</p>
+            <h2 class="text-3xl font-bold mt-2 mb-4">
+              Top all over<br />the world
+            </h2>
+            <div class="flex space-x-3">
+              <button class="bg-red-500 px-5 py-2 rounded-full text-sm">
+                Play
+              </button>
+              <button
+                class="border border-white/30 px-5 py-2 rounded-full text-sm"
+              >
+                Follow
+              </button>
+            </div>
+          </div>
+          <div class="mt-6 md:mt-0 md:ml-6 relative">
+            <img
+              src="https://placehold.co/320x200"
+              alt="artistic portrait of a person holding colorful neon glowing light effect over face music style artwork"
+              class="rounded-xl"
+            />
+            <p class="absolute top-2 right-2 text-xs opacity-80">
+              Monthly listener<br />98.029
+            </p>
+          </div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-xl rounded-2xl p-6">
+          <div class="flex justify-between mb-4">
+            <h3 class="text-xl font-semibold">Playlist</h3>
+            <p class="text-sm opacity-60">Show all</p>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead class="opacity-60 text-left">
+                <tr>
+                  <th class="py-2">Title</th>
+                  <th>Artist</th>
+                  <th>Time</th>
+                  <th>Album</th>
+                </tr>
+              </thead>
+              <tbody class="space-y-2">
+                <tr class="border-t border-white/10">
+                  <td class="py-3">Sleep 4Ever</td>
+                  <td>Blackbear</td>
+                  <td>4:12</td>
+                  <td>HoneyWorks</td>
+                </tr>
+                <tr class="bg-white/10 rounded-lg">
+                  <td class="py-3">Time is Ticking Out</td>
+                  <td>The Cranberries</td>
+                  <td>4:20</td>
+                  <td>Wake up And Smell The Coffee</td>
+                </tr>
+                <tr class="border-t border-white/10">
+                  <td class="py-3">If I were u</td>
+                  <td>Lauv</td>
+                  <td>3:12</td>
+                  <td>The Ecstatic</td>
+                </tr>
+                <tr class="border-t border-white/10">
+                  <td class="py-3">One Minute More</td>
+                  <td>Gun Kelly</td>
+                  <td>2:56</td>
+                  <td>Supercell</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            class="mt-6 bg-white/10 rounded-xl p-4 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 lg:gap-8"
+          >
+            <div class="flex items-center space-x-4">
+              <i class="far fa-heart"></i> <i class="fas fa-random"></i>
+              <i class="fas fa-backward"></i>
+              <button
+                class="bg-white text-purple-700 w-10 h-10 rounded-full flex items-center justify-center"
+              >
+                <i class="fas fa-pause"></i>
+              </button>
+              <i class="fas fa-forward"></i> <i class="fas fa-redo"></i>
+            </div>
+            <div class="flex items-center w-full md:w-1/2 space-x-3">
+              <span class="text-xs">1:16</span>
+              <input type="range" class="w-full" />
+              <span class="text-xs">4:20</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-volume-down"></i> <input type="range" />
+              <i class="fas fa-volume-up"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full lg:w-80 p-6 lg:p-8 bg-white/10 backdrop-blur-xl">
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold mb-3">Tags</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-white/10 px-3 py-1 rounded-full text-sm"
+              >Accoustic</span
+            >
+            <span class="bg-white/10 px-3 py-1 rounded-full text-sm"
+              >Piano jazz</span
+            >
+            <span class="bg-white/10 px-3 py-1 rounded-full text-sm">Jazz</span>
+            <span class="bg-white/10 px-3 py-1 rounded-full text-sm"
+              >Indie pop</span
+            >
+          </div>
+        </div>
+        <div class="mb-8">
+          <div class="flex justify-between mb-4">
+            <h3 class="text-lg font-semibold">Played</h3>
+            <span class="text-sm opacity-60">See all</span>
+          </div>
+          <div class="space-y-4 text-sm">
+            <div class="flex items-center space-x-3">
+              <img
+                src="https://placehold.co/40x40"
+                alt="album artwork inspired by pop music pastel style square cover"
+                class="rounded"
+              />
+              <div class="flex-1">
+                <p>Blank Space</p>
+                <p class="opacity-60 text-xs">Taylor Swift</p>
+              </div>
+              <span class="text-xs opacity-60">4 min ago</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <img
+                src="https://placehold.co/40x40"
+                alt="electronic dance music album artwork neon gradient cover design"
+                class="rounded"
+              />
+              <div class="flex-1">
+                <p>Side Effects</p>
+                <p class="opacity-60 text-xs">The Chainsmokers</p>
+              </div>
+              <span class="text-xs opacity-60">20 min ago</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <img
+                src="https://placehold.co/40x40"
+                alt="classic rock album cover illustration vintage music style square artwork"
+                class="rounded"
+              />
+              <div class="flex-1">
+                <p>No One Like You</p>
+                <p class="opacity-60 text-xs">Scorpions</p>
+              </div>
+              <span class="text-xs opacity-60">2 hr ago</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <img
+                src="https://placehold.co/40x40"
+                alt="retro piano pop album artwork warm pastel colors square cover design"
+                class="rounded"
+              />
+              <div class="flex-1">
+                <p>Always Love You</p>
+                <p class="opacity-60 text-xs">Elton John</p>
+              </div>
+              <span class="text-xs opacity-60">3 hr ago</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white/10 rounded-2xl p-4">
+          <img
+            src="https://placehold.co/300x260"
+            alt="female pop singer album artwork pastel pink and blue background portrait style music cover"
+            class="rounded-xl mb-4"
+          />
+          <p class="text-sm">I Knew You Were</p>
+          <p class="text-xs opacity-60 mb-2">Taylor Swift</p>
+          <button
+            class="bg-white text-purple-700 w-8 h-8 rounded-full flex items-center justify-center"
+          >
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll("input[type='range']").forEach((r) => {
+        r.addEventListener("input", (e) => {});
+      });
+    </script>
+  </body>
+</html>

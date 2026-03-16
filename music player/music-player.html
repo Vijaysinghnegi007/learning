@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Music Dashboard</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    class="bg-gradient-to-br from-purple-700 to-indigo-900 text-white min-h-screen"
+  >
+  
+    <div class="flex flex-col lg:flex-row min-h-screen">
+      <!-- SIDEBAR -->
+
+      <div
+        class="w-full lg:w-64 bg-black/20 backdrop-blur-lg p-6 lg:min-h-screen"
+      >
+        <div class="flex justify-between items-center lg:block">
+          <h1 class="text-2xl font-bold flex items-center gap-2">
+            <i class="ri-apple-fill"></i> Music
+          </h1>
+
+          <button class="lg:hidden text-xl">
+            <i class="ri-menu-line"></i>
+          </button>
+        </div>
+
+        <input
+          class="w-full bg-white/10 rounded-lg px-4 py-2 mt-6 outline-none"
+          placeholder="Search..."
+        />
+
+        <nav class="space-y-4 text-sm mt-6 hidden lg:block">
+          <p class="text-xs opacity-60">MENU</p>
+
+          <a class="flex items-center gap-3 opacity-80 hover:opacity-100 cursor-pointer">
+            <i class="ri-home-4-fill"></i> Home
+          </a>
+
+          <a class="flex items-center gap-3 opacity-80 hover:opacity-100 cursor-pointer">
+            <i class="ri-compass-3-line"></i> Discover
+          </a>
+
+          <a class="flex items-center gap-3 opacity-80 hover:opacity-100 cursor-pointer">
+            <i class="ri-grid-fill"></i> Browse
+          </a>
+
+          <a class="flex items-center gap-3 opacity-80 hover:opacity-100 cursor-pointer">
+            <i class="ri-mic-line"></i> Podcasts
+          </a>
+
+          <p class="text-xs opacity-60 mt-6">LIBRARY</p>
+
+          <a class="flex items-center gap-3 opacity-80 hover:opacity-100 cursor-pointer">
+            <i class="ri-album-line"></i> Albums
+          </a>
+
+          <a class="flex items-center gap-3 opacity-80 hover:opacity-100 cursor-pointer">
+            <i class="ri-music-line"></i> Songs
+          </a>
+
+          <a class="flex items-center gap-3 opacity-80 hover:opacity-100 cursor-pointer">
+            <i class="ri-user-line"></i> Artists
+          </a>
+        </nav>
+      </div>
+
+      <!-- MAIN CONTENT -->
+
+      <div class="flex-1 p-6 lg:p-10">
+        <h2 class="text-sm opacity-60">What's hot</h2>
+        <h1 class="text-3xl lg:text-4xl font-bold mb-6">Trending</h1>
+
+        <!-- HERO CARD -->
+
+        <div
+          class="bg-white/10 rounded-3xl p-6 flex flex-col lg:flex-row gap-6 items-center justify-between mb-10"
+        >
+          <div>
+            <p class="text-xs opacity-60">Artist</p>
+
+            <h2 class="text-2xl lg:text-3xl font-bold mb-4">
+              Top all over the world
+            </h2>
+
+            <div class="flex gap-4">
+              <button class="bg-red-500 px-6 py-2 rounded-full">Play</button>
+
+              <button class="border border-white/30 px-6 py-2 rounded-full">
+                Follow
+              </button>
+            </div>
+          </div>
+
+          <img
+            class="w-full lg:w-64 rounded-2xl"
+            src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce"
+          />
+        </div>
+
+        <!-- PLAYLIST -->
+
+        <div>
+          <div class="flex justify-between mb-4">
+            <h2 class="text-xl lg:text-2xl font-semibold">Playlist</h2>
+
+            <button class="text-sm opacity-60">Show all</button>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead class="opacity-60">
+                <tr class="text-left">
+                  <th class="py-2">#</th>
+                  <th>Title</th>
+                  <th>Artist</th>
+                  <th>Time</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr class="border-t border-white/10">
+                  <td class="py-3">01</td>
+                  <td>Sleep 4Ever</td>
+                  <td>Blackbear</td>
+                  <td>4:12</td>
+                </tr>
+
+                <tr class="border-t border-white/10">
+                  <td class="py-3">02</td>
+                  <td>Time is Ticking Out</td>
+                  <td>The Cranberries</td>
+                  <td>4:20</td>
+                </tr>
+
+                <tr class="border-t border-white/10">
+                  <td class="py-3">03</td>
+                  <td>If I were u</td>
+                  <td>Lauv</td>
+                  <td>3:12</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT PANEL -->
+
+      <div class="w-full lg:w-72 bg-black/20 backdrop-blur-lg p-6">
+        <h3 class="font-semibold mb-4">Tags</h3>
+
+        <div class="flex flex-wrap gap-2 mb-8">
+          <span class="bg-white/10 px-3 py-1 rounded-full text-xs"
+            >Acoustic</span
+          >
+          <span class="bg-white/10 px-3 py-1 rounded-full text-xs">Jazz</span>
+          <span class="bg-white/10 px-3 py-1 rounded-full text-xs">Indie</span>
+          <span class="bg-white/10 px-3 py-1 rounded-full text-xs">Piano</span>
+        </div>
+
+        <h3 class="font-semibold mb-4">Played</h3>
+
+        <div class="space-y-4 text-sm">
+          <div class="flex items-center gap-3">
+            <img
+              class="w-10 h-10 rounded"
+              src="https://i.pravatar.cc/40?img=1"
+            />
+
+            <div>
+              <p>Blank Space</p>
+              <p class="text-xs opacity-60">Taylor Swift</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <img
+              class="w-10 h-10 rounded"
+              src="https://i.pravatar.cc/40?img=2"
+            />
+
+            <div>
+              <p>Side Effects</p>
+              <p class="text-xs opacity-60">Chainsmokers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MUSIC PLAYER -->
+
+    <div
+      class="fixed bottom-0 left-0 w-full bg-black/40 backdrop-blur-lg p-4 flex flex-col sm:flex-row items-center justify-center gap-4"
+    >
+      <div class="flex items-center gap-6">
+        <button>
+          <i class="ri-skip-back-fill text-2xl"></i>
+        </button>
+
+        <button
+          class="bg-white text-black w-12 h-12 rounded-full flex items-center justify-center"
+        >
+          <i class="ri-pause-fill text-xl"></i>
+        </button>
+
+        <button>
+          <i class="ri-skip-forward-fill text-2xl"></i>
+        </button>
+      </div>
+
+      <input type="range" class="w-full sm:w-64 cursor-grab active:cursor-grabbing" />
+    </div>
+  </body>
+</html>

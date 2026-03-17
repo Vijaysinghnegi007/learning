@@ -29,27 +29,62 @@
           </div>
         </div>
       </section>
-
+      <!-- 
       <section class="player">
-        <!-- back  -->
+     
         <button class="previous">
           <i class="fa-solid fa-backward-step"></i>
         </button>
 
-        <!-- play pause  -->
+    
 
         <button class="play">
-          <i class="fa-solid fa-play play-icon" ></i>
-          <!-- <i class="fa-solid fa-pause"></i> -->
+          <i class="fa-solid fa-play play-icon"></i>
+       
         </button>
 
-        <!-- next  -->
+    
         <button class="next">
           <i class="fa-solid fa-forward-step"></i>
         </button>
+      </section> -->
+
+      <section class="player">
+        <div class="controls">
+          <button class="control-btn shuffle" title="Shuffle">
+            <i class="fa-solid fa-shuffle"></i>
+          </button>
+
+          <button class="control-btn previous" title="Previous">
+            <i class="fa-solid fa-backward-step"></i>
+          </button>
+
+          <button class="control-btn play" title="Play">
+            <i class="fa-solid fa-play play-icon"></i>
+          </button>
+
+          <button class="control-btn next" title="Next">
+            <i class="fa-solid fa-forward-step"></i>
+          </button>
+
+          <button class="control-btn repeat" title="Repeat">
+            <i class="fa-solid fa-repeat repeat-icon"></i>
+          </button>
+        </div>
+        <!-- progress bar -->
+           <div class="progress-wrapper">
+          <span class="current-time">0:00</span>
+
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+
+          <span class="total-time">0:00</span>
+        </div>
+        
       </section>
+    
     </main>
     <script src="script.js"></script>
   </body>
-
 </html>

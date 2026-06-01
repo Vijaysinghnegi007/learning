@@ -5,9 +5,98 @@
   box-sizing: border-box;
 }
 /* ===== BASE STYLES ===== */
+
 html {
   scroll-behavior: smooth;
 }
+
+/* variable  */
+:root {
+  /* Backgrounds */
+  --background: #020617;
+  --foreground: #f8fafc;
+
+  --card: #0f172a;
+  --card-foreground: #f8fafc;
+
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+
+  /* Primary */
+  --primary: #22c55e;
+  --primary-foreground: #ffffff;
+  --primary-hover: #16a34a;
+
+  /* Secondary */
+  --secondary: #1e293b;
+  --secondary-foreground: #e2e8f0;
+
+  /* Muted */
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+
+  /* Accent */
+  --accent: #14532d;
+  --accent-foreground: #dcfce7;
+
+  /* Destructive */
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  /* Border and Input */
+  --border: #334155;
+  --input: #1e293b;
+  --ring: #22c55e;
+
+  /* Snake Game Specific */
+  --board: #0b1120;
+  --board-grid: rgba(255, 255, 255, 0.05);
+  --snake-head: #22c55e;
+  --snake-body: #4ade80;
+  --food: #f43f5e;
+
+  /* Shadow */
+  --shadow: rgba(0, 0, 0, 0.35);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  /* Font */
+  --font-sans: "Inter", "Segoe UI", sans-serif;
+
+  /* Font Sizes */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+
+  /* Spacing */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+
+  /* Shadow presets */
+  --shadow-sm: 0 2px 6px var(--shadow);
+  --shadow-md: 0 8px 20px var(--shadow);
+  --shadow-lg: 0 16px 40px var(--shadow);
+
+  /* Transition */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
 body {
   font-family:
     system-ui,
@@ -22,8 +111,8 @@ body {
     "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: black;
-  color: white;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 /* ===== LINKS ===== */
 a {
@@ -35,17 +124,25 @@ ul,
 ol {
   list-style: none;
 }
-/* ===== reusable classes ===== */
 
-.between {
-  display: flex;
-  justify-content: space-between;
+/* ===== reusable classes ===== */
+.side-width {
+  max-width: 1440px;
+  padding-left: 64px;
+  padding-right: 64px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.between {
+  display: flex;
+  justify-content: space-between;
 }
 
 .pb-64 {
@@ -56,13 +153,13 @@ ol {
   margin-top: 64px;
 }
 
-.side-width {
-  max-width: 1440px;
-  padding-left: 64px;
-  padding-right: 64px;
-  margin-left: auto;
-  margin-right: auto;
+.h-full {
+  height: 100%;
 }
+.w-full {
+  width: 100%;
+}
+/* header  */
 
 .header {
   width: 100%;
@@ -79,5 +176,24 @@ ol {
 .high_score,
 .time,
 .score {
+  border: 0.2px solid var(--secondary-foreground);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--spacing-3);
+}
 
+.board {
+  border: 1px solid var(--foreground);
+  min-height: 80vh;
+  width: 80%;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  margin: auto;
+}
+
+.block {
+  height: 30px;
+  width: 30px;
+  border: 1px solid var(--border);
+  box-sizing: border-box;
 }

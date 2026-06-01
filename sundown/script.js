@@ -1,7 +1,7 @@
 window.addEventListener("load", () => {
 
   if (typeof Lenis === "undefined") {
-    console.error("Lenis failed to load");
+    console.error("Lenis failed to load package");
     return;
   }
 
@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
     lenis.raf(time);
     requestAnimationFrame(raf);
   }
-
+  
   requestAnimationFrame(raf);
 
   lenis.on("scroll", ScrollTrigger.update);

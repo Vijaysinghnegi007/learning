@@ -1,0 +1,386 @@
+/* ============================================================
+   GLOBAL RESET
+   ============================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   DESIGN TOKENS
+   Global values shared across all button components.
+   Change these to retheme everything at once.
+   ============================================================ */
+
+:root {
+  /* Typography */
+  --font-base: Montserrat, sans-serif;
+
+  /* Page */
+  --page-bg: #111;
+  --page-text: #fff;
+
+  /* Shared button defaults */
+  --btn-height: 60px;
+  --btn-border-radius: 999px;
+  --btn-font-size: 12px;
+  --btn-font-weight: 600;
+  --btn-letter-spacing: 3px;
+
+  /* Icon circle */
+  --btn-icon-size: 32px;
+
+  /* Easing */
+  --ease-swap: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-color: ease;
+
+  /* Duration */
+  --dur-fill: 0.5s;
+  --dur-move: 0.55s;
+  --dur-color: 0.35s;
+}
+
+/* ============================================================
+   BASE LAYOUT
+   ============================================================ */
+
+body {
+  background: var(--page-bg);
+  color: var(--page-text);
+  font-family: var(--font-base);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px;
+}
+
+.section {
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.section-description {
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 35px;
+  line-height: 1.7;
+  max-width: 700px;
+}
+
+.button-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* ============================================================
+   DSN BUTTON
+   Layout: [icon] [text]
+   On hover: fill sweeps left → right, icon nudges right, text nudges left.
+   ============================================================ */
+
+/* --- Base --- */
+
+.dsn-btn {
+  /* Component-scoped tokens with defaults.
+     Override these per variant — nothing else needs to change. */
+  --_bg: transparent;
+  --_border: rgba(255, 255, 255, 0.2);
+  --_text: #fff;
+  --_text-hover: #000;
+  --_fill: #fff;
+  --_icon-bg: #fff;
+  --_icon-color: #000;
+  --_icon-bg-hover: #000;
+  --_icon-color-hover: #fff;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+
+  height: var(--btn-height);
+  padding-right: 26px;
+
+  border-radius: var(--btn-border-radius);
+  border: 1px solid var(--_border);
+  background: var(--_bg);
+  color: var(--_text);
+
+  text-decoration: none;
+  transition: color var(--dur-color) var(--ease-color);
+}
+
+/* Fill layer */
+.dsn-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--_fill);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur-fill) var(--ease-swap);
+}
+
+.dsn-btn:hover::before {
+  transform: scaleX(1);
+}
+.dsn-btn:hover {
+  color: var(--_text-hover);
+}
+
+/* Icon */
+.dsn-btn__icon {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+
+  width: var(--btn-icon-size);
+  height: var(--btn-icon-size);
+  margin: 12px 20px;
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--_icon-bg);
+  color: var(--_icon-color);
+
+  transition:
+    transform var(--dur-move) var(--ease-swap),
+    background var(--dur-color) var(--ease-color),
+    color var(--dur-color) var(--ease-color);
+}
+
+.dsn-btn:hover .dsn-btn__icon {
+  transform: translateX(6px);
+  background: var(--_icon-bg-hover);
+  color: var(--_icon-color-hover);
+}
+
+/* Text */
+.dsn-btn__text {
+  position: relative;
+  z-index: 2;
+
+  font-size: var(--btn-font-size);
+  font-weight: var(--btn-font-weight);
+  letter-spacing: var(--btn-letter-spacing);
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  transition: transform var(--dur-move) var(--ease-swap);
+}
+
+.dsn-btn:hover .dsn-btn__text {
+  transform: translateX(-4px);
+}
+
+/* --- DSN Variants ---
+   Only override the tokens that differ from the base.
+   ---------------------------------------------------------- */
+
+/* Outline — default look, transparent bg */
+.dsn-btn.variant-outline {
+  --_bg: transparent;
+}
+
+/* Dark — solid black bg */
+.dsn-btn.variant-dark {
+  --_bg: #000;
+}
+
+/* Light — inverted, white bg */
+.dsn-btn.variant-light {
+  --_bg: #fff;
+  --_border: #fff;
+  --_text: #000;
+  --_text-hover: #fff;
+  --_fill: #111;
+  --_icon-bg: #000;
+  --_icon-color: #fff;
+  --_icon-bg-hover: #fff;
+  --_icon-color-hover: #000;
+}
+
+/* Blue — brand blue bg */
+.dsn-btn.variant-blue {
+  --_bg: #2563eb;
+  --_border: #2563eb;
+  --_text-hover: #2563eb;
+  --_icon-color: #2563eb;
+  --_icon-bg-hover: #2563eb;
+}
+
+/* Gold — warm gold bg */
+.dsn-btn.variant-gold {
+  --_bg: #c9a227;
+  --_border: #c9a227;
+  --_text-hover: #c9a227;
+  --_icon-color: #c9a227;
+  --_icon-bg-hover: #c9a227;
+}
+
+/* ============================================================
+   SWAP BUTTON
+   Layout: [icon] [text]
+   On hover: fill sweeps left → right, icon slides to the right end,
+   text slides to the left end. Icon and text swap sides.
+   ============================================================ */
+
+/* --- Base --- */
+
+.swap-btn {
+  /* Component-scoped tokens with defaults.
+     Override these per variant — nothing else needs to change. */
+  --_bg: transparent;
+  --_border: rgba(255, 255, 255, 0.2);
+  --_text: #fff;
+  --_text-hover: #000;
+  --_fill: #fff;
+  --_icon-bg: #fff;
+  --_icon-color: #000;
+  --_icon-bg-hover: #000;
+  --_icon-color-hover: #fff;
+
+  /*
+    Icon slot = left offset (14px) + icon width (32px) + gap (16px) = 62px
+    padding-left pushes the in-flow text to start after the icon.
+    This is what gives the button its correct width for any text length.
+  */
+  --_icon-slot: 62px;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+
+  height: var(--btn-height);
+  padding: 0 28px 0 var(--_icon-slot);
+
+  border-radius: var(--btn-border-radius);
+  border: 1px solid var(--_border);
+  background: var(--_bg);
+
+  text-decoration: none;
+}
+
+/* Fill layer */
+.swap-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--_fill);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur-move) var(--ease-swap);
+}
+
+.swap-btn:hover::before {
+  transform: scaleX(1);
+}
+
+/* Text — stays in flow to size the button correctly */
+.swap-btn__text {
+  position: relative;
+  z-index: 2;
+  white-space: nowrap;
+
+  color: var(--_text);
+  font-size: var(--btn-font-size);
+  font-weight: var(--btn-font-weight);
+  letter-spacing: var(--btn-letter-spacing);
+  text-transform: uppercase;
+
+  transition:
+    transform var(--dur-move) var(--ease-swap),
+    color var(--dur-color) var(--ease-color);
+}
+
+.swap-btn:hover .swap-btn__text {
+  /*
+    Slide left by the icon slot so text ends up near the left edge.
+    The +8px leaves a small breathing margin from the border.
+  */
+  transform: translateX(calc(-1 * var(--_icon-slot) + 8px));
+  color: var(--_text-hover);
+}
+
+/* Icon — absolutely positioned so it can slide across the button */
+.swap-btn__icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  z-index: 2;
+
+  width: var(--btn-icon-size);
+  height: var(--btn-icon-size);
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--_icon-bg);
+  color: var(--_icon-color);
+
+  transition:
+    left var(--dur-move) var(--ease-swap),
+    background var(--dur-color) var(--ease-color),
+    color var(--dur-color) var(--ease-color);
+}
+
+.swap-btn:hover .swap-btn__icon {
+  /* Slide to right edge: 100% - icon width (32px) - right padding (14px) */
+  left: calc(100% - 46px);
+  background: var(--_icon-bg-hover);
+  color: var(--_icon-color-hover);
+}
+
+/* --- Swap Variants ---
+   Only override the tokens that differ from the base.
+   ---------------------------------------------------------- */
+
+/* Dark — solid black bg */
+.swap-btn.swap-dark {
+  --_bg: #000;
+}
+
+.swap-btn.swap-light {
+  --_bg: #fff;
+  --_border: #fff;
+  --_text: #000;
+  --_text-hover: #fff;
+  --_fill: #111;
+  --_icon-bg: #000;
+  --_icon-color: #fff;
+  --_icon-bg-hover: #fff;
+  --_icon-color-hover: #000;
+}
+
+/* Blue — brand blue bg */
+.swap-btn.swap-blue {
+  --_bg: #2563eb;
+  --_border: #2563eb;
+  --_text-hover: #2563eb;
+  --_icon-color: #2563eb;
+  --_icon-bg-hover: #2563eb;
+}
+
+/* Gold — warm gold bg */
+.swap-btn.swap-gold {
+  --_bg: #c9a227;
+  --_border: #c9a227;
+  --_text-hover: #c9a227;
+  --_icon-color: #c9a227;
+  --_icon-bg-hover: #c9a227;
+}

@@ -37,7 +37,5 @@ window.addEventListener("load", () => {
       invalidateOnRefresh: true
     }
   });
-
   ScrollTrigger.refresh();
-
 });

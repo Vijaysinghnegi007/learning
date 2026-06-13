@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+/* ========================================
+   Light Theme
+======================================== */
+
+:root {
+  /* Background Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-muted: #f1f5f9;
+  --bg-accent: #eff6ff;
+
+  /* Text Colors */
+  --text-primary: #020617;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-heading: #06145b;
+  --text-white: #ffffff;
+  --text-accent: #1d4ed8;
+
+  /* Brand Colors */
+  --primary: #2454f4;
+  --primary-hover: #1237d8;
+  --primary-light: #dbeafe;
+  --primary-dark: #06145b;
+
+  /* Borders */
+  --border: #e2e8f0;
+  --border-light: #f1f5f9;
+  --border-accent: #bfdbfe;
+
+  /* Status Colors */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  /* Shadows */
+  --shadow-color: rgba(15, 23, 42, 0.08);
+
+  /* Typography */
+  --font-base: "Inter", sans-serif;
+}
+
+/* ========================================
+   Dark Theme
+======================================== */
+
+.dark {
+  --bg-primary: #020617;
+  --bg-secondary: #0f172a;
+  --bg-card: #111827;
+  --bg-muted: #1e293b;
+  --bg-accent: #172554;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-heading: #ffffff;
+  --text-white: #ffffff;
+  --text-accent: #60a5fa;
+
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --primary-light: #1e3a8a;
+  --primary-dark: #93c5fd;
+
+  --border: #334155;
+  --border-light: #1e293b;
+  --border-accent: #1d4ed8;
+
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+
+  --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================
+   Tailwind Theme Tokens
+======================================== */
+
+@theme {
+  /* Fonts */
+  --font-sans: var(--font-base);
+
+  /* Backgrounds */
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-card: var(--bg-card);
+  --color-bg-muted: var(--bg-muted);
+  --color-bg-accent: var(--bg-accent);
+
+  /* Text */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-heading: var(--text-heading);
+  --color-text-accent: var(--text-accent);
+
+  /* Brand */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+
+  /* Borders */
+  --color-border: var(--border);
+  --color-border-light: var(--border-light);
+  --color-border-accent: var(--border-accent);
+
+  /* Status */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+}
+
+/* ========================================
+   Base Styles
+======================================== */
+
+@layer base {
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-base);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--text-heading);
+  }
+
+  p {
+    color: var(--text-muted);
+  }
+}
+
+@utility container{
+  @apply max-w-7xl mx-auto border border-border px-4 md:px-6 lg:px-8
+}
+@utility center{
+  @apply flex justify-center items-center
+}
+@utility between{
+  @apply flex justify-between items-center
+}

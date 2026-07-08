@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toaster</title>
+    <style>
+      :root {
+        --background: #ffffff;
+        --foreground: #171717;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background: #0a0a0a;
+          --foreground: #ededed;
+        }
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        background: var(--background);
+        color: var(--foreground);
+        font-family: system-ui, sans-serif;
+        overflow-x: hidden;
+      }
+
+      .toast {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+
+        padding: 14px 20px;
+        border-radius: 8px;
+
+        color: var(--foreground);
+        font-size: 14px;
+        z-index: 9999;
+      }
+
+      .toast.error {
+        background: #e53935;
+      }
+
+      .toast.warning {
+        background: #f39c12;
+      }
+
+      .toast.success {
+        background: #27ae60;
+      }
+      .toast.message {
+        background: var(--background);
+        color: var(--foreground);
+      }
+
+      .button-group {
+        height: 100svh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        border: none;
+        outline: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--foreground);
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn:active {
+        transform: scale(0.96);
+      }
+
+      .btn-message {
+        background: #3b82f6;
+      }
+
+      .btn-message:hover {
+        background: #2563eb;
+      }
+
+      .btn-warning {
+        background: #f59e0b;
+      }
+
+      .btn-warning:hover {
+        background: #d97706;
+      }
+
+      .btn-error {
+        background: #ef4444;
+      }
+
+      .btn-error:hover {
+        background: #dc2626;
+      }
+
+      .btn-success {
+        background: #22c55e;
+      }
+
+      .btn-success:hover {
+        background: #16a34a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="button-group">
+      <button class="btn btn-message">Message</button>
+      <button class="btn btn-warning">Warning</button>
+      <button class="btn btn-error">Error</button>
+      <button class="btn btn-success">Success</button>
+    </div>
+  </body>
+
+  <script>
+    function createToast(details, type = "message") {
+      const toast = document.createElement("div");
+
+      toast.textContent = details;
+      toast.classList.add("toast", "message");
+
+      if (type === "error") {
+        toast.classList.remove("message");
+        toast.classList.add("error");
+      } else if (type === "warning") {
+        toast.classList.remove("message");
+        toast.classList.add("warning");
+      } else if (type === "success") {
+        toast.classList.remove("message");
+        toast.classList.add("success");
+      }
+
+      setTimeout(() => {
+        document.body.append(toast);
+
+        setTimeout(() => {
+          toast.remove();
+        }, 3000);
+      }, 10);
+    }
+
+    // createToast("This is a success message", "success");
+
+    let buttonGroup = document.querySelector(".button-group");
+    buttonGroup.addEventListener("click", (e) => {
+      console.log(e.target);
+      if (e.target.closest(".btn-message")) {
+        createToast("This is a toast message", "message");
+      } else if (e.target.closest(".btn-warning")) {
+        createToast("This is a toast warning", "warning");
+      } else if (e.target.closest(".btn-error")) {
+        createToast("This is a toast error", "error");
+      } else {
+        createToast("This is a toast success", "success");
+      }
+    });
+  </script>
+</html>
